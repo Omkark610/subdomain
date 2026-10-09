@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Omkar Kadam: all projects</title>
+<meta name="description" content="Thirteen small sites by Omkar Kadam, from pregnancy and fitness guides to Mumbai local trains.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  --bg:#1a1124; --bg2:#231733; --ink:#f1ecf7; --mute:#a99bbd; --line:#38294c; --gold:#e9b95a; --hover:#2a1c3d;
+  --serif:'Fraunces',Georgia,'Times New Roman',serif;
+  --sans:'Instrument Sans','Helvetica Neue',Arial,sans-serif;
+}
+@media (prefers-color-scheme:light){
+  :root:not([data-theme="dark"]){--bg:#f4f1f8;--bg2:#ebe5f3;--ink:#241733;--mute:#6b5a80;--line:#d6cce3;--gold:#9a6a05;--hover:#e8e0f1}
+}
+:root[data-theme="light"]{--bg:#f4f1f8;--bg2:#ebe5f3;--ink:#241733;--mute:#6b5a80;--line:#d6cce3;--gold:#9a6a05;--hover:#e8e0f1}
+:root[data-theme="dark"]{--bg:#1a1124;--bg2:#231733;--ink:#f1ecf7;--mute:#a99bbd;--line:#38294c;--gold:#e9b95a;--hover:#2a1c3d}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;min-height:100%;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+a:focus-visible{outline:2px solid var(--gold);outline-offset:-2px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 clamp(20px,5vw,48px)}
+
+header{padding:clamp(56px,11vw,128px) 0 clamp(40px,7vw,80px)}
+.name{font-family:var(--serif);font-weight:300;font-size:clamp(34px,6.5vw,80px);line-height:.98;letter-spacing:-.025em;margin:0;font-variation-settings:'opsz' 144}
+.name span{display:inline-block;overflow:hidden;vertical-align:top;padding-right:.05em}
+.name span:first-child{margin-right:.22em}
+.name span i{display:block;font-style:normal;animation:rise 1s cubic-bezier(.2,.7,.2,1) both}
+.name span:nth-child(2) i{animation-delay:.12s;color:var(--gold);font-style:italic;font-weight:300}
+@keyframes rise{from{transform:translateY(105%)}to{transform:none}}
+.lede{max-width:46ch;margin:clamp(24px,4vw,40px) 0 0;color:var(--mute);font-size:clamp(16px,1.6vw,18px)}
+
+.group{margin-top:clamp(32px,5vw,56px)}
+.group h2{font-family:var(--serif);font-weight:400;font-size:20px;margin:0 0 14px;color:var(--gold);display:flex;align-items:baseline;gap:14px}
+.group h2 small{font-family:var(--sans);font-size:14px;color:var(--mute);font-weight:400}
+.list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.list li{border-bottom:1px solid var(--line)}
+.row{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1.4fr) auto;gap:8px 32px;align-items:center;padding:clamp(18px,2.6vw,28px) clamp(4px,1.2vw,16px);transition:background .25s,padding .25s}
+.row:hover{background:var(--hover);padding-left:clamp(14px,2.4vw,28px)}
+.title{font-family:var(--serif);font-weight:400;font-size:clamp(24px,3.4vw,38px);line-height:1.1;letter-spacing:-.01em}
+.desc{color:var(--mute);margin:0;max-width:44ch}
+.host{display:inline-flex;align-items:center;gap:10px;font-size:14px;color:var(--ink);white-space:nowrap}
+.host b{font-weight:500;color:var(--gold)}
+.host svg{width:16px;height:16px;flex:none;transition:transform .25s;color:var(--gold)}
+.row:hover .host svg{transform:translate(3px,-3px)}
+
+footer{margin-top:clamp(56px,9vw,112px);padding:28px 0 56px;border-top:1px solid var(--line);color:var(--mute);font-size:14px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--ink);border-bottom:1px solid var(--gold)}
+
+@media (max-width:760px){
+  .row{grid-template-columns:1fr;gap:6px}
+  .host{margin-top:6px}
+}
+@media (prefers-reduced-motion:reduce){
+  .name span i{animation:none}
+  .row,.host svg{transition:none}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1 class="name"><span><i>Omkar</i></span><span><i>Kadam</i></span></h1>
+    <p class="lede">Explore Subdomains.</p>
+  </header>
+
+  <main>
+    <section class="group" aria-labelledby="g1">
+      <h2 id="g1">Body and wellbeing <small>3 sites</small></h2>
+      <ul class="list">
+        <li><a class="row" href="https://food.omkarkadam.in" rel="noopener"><span class="title">Essential foods list</span><p class="desc">The everyday foods worth keeping in your kitchen, and why each one earns its place.</p><span class="host"><b>food</b>.omkarkadam.in<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a></li>
+        <li><a class="row" href="https://fitness.omkarkadam.in" rel="noopener"><span class="title">Fitness guide</span><p class="desc">Simple routines and habits to build strength and stamina, whatever your starting point.</p><span class="host"><b>fitness</b>.omkarkadam.in<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a></li>
+        <li><a class="row" href="https://dhyan.omkarkadam.in" rel="noopener"><span class="title">Meditate</span><p class="desc">A quiet space to sit, breathe and settle your mind. Dhyan, in a few minutes a day.</p><span class="host"><b>dhyan</b>.omkarkadam.in<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a></li>
+      </ul>
+    </section>
+
+    <section class="group" aria-labelledby="g7">
+      <h2 id="g7">Pregnancy guide <small>1 site</small></h2>
+      <ul class="list">
+        <li><a class="row" href="https://pregnancy.omkarkadam.in" rel="noopener"><span class="title">Pregnancy Guide</span><p class="desc">A calm, clear companion for expecting parents, from the first weeks to the first days at home.</p><span class="host"><b>pregnancy</b>.omkarkadam.in<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a></li>
+      </ul>
+    </section>
+
+    <section class="group" aria-labelledby="g6">
+      <h2 id="g6">Massages <small>1 site</small></h2>
+      <ul class="list">
+        <li><a class="row" href="https://massage.omkarkadam.in" rel="noopener"><span class="title">Relax, rejuvenate, refresh</span><p class="desc">Massage and recovery, for when your body needs to slow down and reset.</p><span class="host"><b>massage</b>.omkarkadam.in<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a></li>
+      </ul>
+    </section>
+
+    <section class="group" aria-labelledby="g2">
+      <h2 id="g2">Inspire and motivate <small>2 sites</small></h2>
+      <ul class="list">
+        <li><a class="row" href="https://drive.omkarkadam.in" rel="noopener"><span class="title">Inspire and motivate</span><p class="desc">A push for the days you need one. Short, honest words to get you moving again.</p><span class="host"><b>drive</b>.omkarkadam.in<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a></li>
+        <li><a class="row" href="https://time.omkarkadam.in" rel="noopener"><span class="title">Life in decades</span><p class="desc">See your life laid out decade by decade, and decide what to do with the time you have.</p><span class="host"><b>time</b>.omkarkadam.in<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a></li>
+      </ul>
+    </section>
+
+    <section class="group" aria-labelledby="g8">
+      <h2 id="g8">Finance guide <small>1 site</small></h2>
+      <ul class="list">
+        <li><a class="row" href="https://finance.omkarkadam.in" rel="noopener"><span class="title">Finance Guide</span><p class="desc">Money basics in plain language: saving, investing and planning with confidence.</p><span class="host"><b>finance</b>.omkarkadam.in<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a></li>
+      </ul>
+    </section>
+
+    <section class="group" aria-labelledby="g3">
+      <h2 id="g3">City and everyday <small>1 site</small></h2>
+      <ul class="list">
+        <li><a class="row" href="https://guide.omkarkadam.in" rel="noopener"><span class="title">Mumbai local guide</span><p class="desc">Lines, stations and practical tips for getting around Mumbai by local train.</p><span class="host"><b>guide</b>.omkarkadam.in<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a></li>
+      </ul>
+    </section>
+
+    <section class="group" aria-labelledby="g4">
+      <h2 id="g4">Play <small>2 sites</small></h2>
+      <ul class="list">
+        <li><a class="row" href="https://gaming.omkarkadam.in" rel="noopener"><span class="title">Game streaming</span><p class="desc">Watch games live and drop into the stream.</p><span class="host"><b>gaming</b>.omkarkadam.in<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a></li>
+        <li><a class="row" href="https://gomi-sort.omkarkadam.in" rel="noopener"><span class="title">Gomi waste sort</span><p class="desc">Find out which bin each item belongs in, with Japanese-style waste sorting made simple.</p><span class="host"><b>gomi-sort</b>.omkarkadam.in<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a></li>
+      </ul>
+    </section>
+
+    <section class="group" aria-labelledby="g5">
+      <h2 id="g5">Dating <small>2 sites</small></h2>
+      <ul class="list">
+        <li><a class="row" href="https://dating.omkarkadam.in" rel="noopener"><span class="title">Date Omkar</span><p class="desc">Say hello. A friendly little page for starting a conversation with me.</p><span class="host"><b>dating</b>.omkarkadam.in<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a></li>
+        <li><a class="row" href="https://skore.omkarkadam.in" rel="noopener"><span class="title">Realtime bodycount</span><p class="desc">A live counter that keeps score as it happens, with no refresh needed.</p><span class="host"><b>skore</b>.omkarkadam.in<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <span>&copy; <span id="y">2026</span> Omkar Kadam</span>
+    <a href="https://omkarkadam.in">omkarkadam.in</a>
+  </footer>
+</div>
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</body>
+</html>
