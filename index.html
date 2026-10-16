@@ -15,7 +15,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Omkar Kadam: Subdomains</title>
-<meta name="description" content="Fifteen small sites by Omkar Kadam, from an idea vault and pregnancy and fitness guides to Mumbai local trains.">
+<meta name="description" content="Sixteen small sites by Omkar Kadam, from an idea vault and pregnancy and fitness guides to Mumbai local trains.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
@@ -38,7 +38,18 @@ html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
 body{margin:0;min-height:100%;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
 a:focus-visible{outline:2px solid var(--gold);outline-offset:-2px}
-.wrap{max-width:1080px;margin:0 auto;padding:0 clamp(20px,5vw,48px)}
+.music{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:5;width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:var(--bg2);color:var(--gold);display:grid;place-items:center;cursor:pointer;padding:0;transition:background .25s,transform .25s}
+.music:hover{background:var(--hover);transform:scale(1.06)}
+.music:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.music svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.music .w{display:none}
+.music.on .w{display:inline}
+.music.on .x{display:none}
+.music:not(.on)::after{content:"";position:absolute;inset:-1px;border-radius:50%;border:1px solid var(--gold);animation:ping 2.6s ease-out infinite;pointer-events:none}
+@keyframes ping{from{transform:scale(1);opacity:.7}to{transform:scale(1.7);opacity:0}}
+@media (prefers-reduced-motion:reduce){.music:not(.on)::after{animation:none;display:none}.music{transition:none}}
+#stars{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.wrap{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 clamp(20px,5vw,48px)}
 
 header{padding:clamp(28px,5vw,56px) 0 clamp(16px,3vw,28px)}
 .name{font-family:var(--serif);font-weight:300;font-size:clamp(34px,6.5vw,80px);line-height:.98;letter-spacing:-.025em;margin:0;font-variation-settings:'opsz' 144}
@@ -77,6 +88,8 @@ footer a{color:var(--ink);border-bottom:1px solid var(--gold)}
 </style>
 </head>
 <body>
+<canvas id="stars" aria-hidden="true"></canvas>
+<button id="music" class="music" type="button" aria-pressed="false" aria-label="Play ambient music" title="Play ambient music"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path class="w" d="M16 9a4 4 0 010 6M18.5 6.5a8 8 0 010 11"/><path class="x" d="M16 9l5 6M21 9l-5 6"/></svg></button>
 <div class="wrap">
   <header>
     <h1 class="name"><span><i>Omkar</i></span><span><i>Kadam</i></span></h1>
@@ -94,8 +107,8 @@ footer a{color:var(--ink);border-bottom:1px solid var(--gold)}
     <section class="group" aria-labelledby="g1">
       <h2 id="g1">Body and wellbeing <small>3 sites</small></h2>
       <ul class="list">
-        <li><a class="row" href="https://food.omkarkadam.in" target="_blank" rel="noopener"><span class="title">Essential foods list</span><p class="desc">The everyday foods worth keeping in your kitchen, and why each one earns its place.</p><span class="host"><b>food</b>.omkarkadam.in<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a></li>
-        <li><a class="row" href="https://fitness.omkarkadam.in" target="_blank" rel="noopener"><span class="title">Fitness guide</span><p class="desc">Simple routines and habits to build strength and stamina, whatever your starting point.</p><span class="host"><b>fitness</b>.omkarkadam.in<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a></li>
+        <li><a class="row" href="https://food.omkarkadam.in" target="_blank" rel="noopener"><span class="title">Essential Foods List</span><p class="desc">The everyday foods worth keeping in your kitchen, and why each one earns its place.</p><span class="host"><b>food</b>.omkarkadam.in<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a></li>
+        <li><a class="row" href="https://fitness.omkarkadam.in" target="_blank" rel="noopener"><span class="title">Fitness Guide</span><p class="desc">Simple routines and habits to build strength and stamina, whatever your starting point.</p><span class="host"><b>fitness</b>.omkarkadam.in<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a></li>
         <li><a class="row" href="https://dhyan.omkarkadam.in" target="_blank" rel="noopener"><span class="title">Meditate</span><p class="desc">A quiet space to sit, breathe and settle your mind. Dhyan, in a few minutes a day.</p><span class="host"><b>dhyan</b>.omkarkadam.in<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a></li>
       </ul>
     </section>
@@ -110,15 +123,15 @@ footer a{color:var(--ink);border-bottom:1px solid var(--gold)}
     <section class="group" aria-labelledby="g6">
       <h2 id="g6">Massages <small>1 site</small></h2>
       <ul class="list">
-        <li><a class="row" href="https://massage.omkarkadam.in" target="_blank" rel="noopener"><span class="title">Relax, rejuvenate, refresh</span><p class="desc">Massage and recovery, for when your body needs to slow down and reset.</p><span class="host"><b>massage</b>.omkarkadam.in<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a></li>
+        <li><a class="row" href="https://massage.omkarkadam.in" target="_blank" rel="noopener"><span class="title">Relax, Rejuvenate, Refresh</span><p class="desc">Massage and recovery, for when your body needs to slow down and reset.</p><span class="host"><b>massage</b>.omkarkadam.in<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a></li>
       </ul>
     </section>
 
     <section class="group" aria-labelledby="g2">
       <h2 id="g2">Inspire and motivate <small>2 sites</small></h2>
       <ul class="list">
-        <li><a class="row" href="https://drive.omkarkadam.in" target="_blank" rel="noopener"><span class="title">Inspire and motivate</span><p class="desc">A push for the days you need one. Short, honest words to get you moving again.</p><span class="host"><b>drive</b>.omkarkadam.in<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a></li>
-        <li><a class="row" href="https://time.omkarkadam.in" target="_blank" rel="noopener"><span class="title">Life in decades</span><p class="desc">See your life laid out decade by decade, and decide what to do with the time you have.</p><span class="host"><b>time</b>.omkarkadam.in<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a></li>
+        <li><a class="row" href="https://drive.omkarkadam.in" target="_blank" rel="noopener"><span class="title">Inspire And Motivate</span><p class="desc">A push for the days you need one. Short, honest words to get you moving again.</p><span class="host"><b>drive</b>.omkarkadam.in<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a></li>
+        <li><a class="row" href="https://time.omkarkadam.in" target="_blank" rel="noopener"><span class="title">Life In Decades</span><p class="desc">See your life laid out decade by decade, and decide what to do with the time you have.</p><span class="host"><b>time</b>.omkarkadam.in<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a></li>
       </ul>
     </section>
 
@@ -132,16 +145,17 @@ footer a{color:var(--ink);border-bottom:1px solid var(--gold)}
     <section class="group" aria-labelledby="g3">
       <h2 id="g3">City and everyday <small>1 site</small></h2>
       <ul class="list">
-        <li><a class="row" href="https://guide.omkarkadam.in" target="_blank" rel="noopener"><span class="title">Mumbai local guide</span><p class="desc">Lines, stations and practical tips for getting around Mumbai by local train.</p><span class="host"><b>guide</b>.omkarkadam.in<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a></li>
+        <li><a class="row" href="https://guide.omkarkadam.in" target="_blank" rel="noopener"><span class="title">Mumbai Local Guide</span><p class="desc">Lines, stations and practical tips for getting around Mumbai by local train.</p><span class="host"><b>guide</b>.omkarkadam.in<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a></li>
       </ul>
     </section>
 
     <section class="group" aria-labelledby="g4">
-      <h2 id="g4">Play <small>3 sites</small></h2>
+      <h2 id="g4">Play <small>4 sites</small></h2>
       <ul class="list">
-        <li><a class="row" href="https://gaming.omkarkadam.in" target="_blank" rel="noopener"><span class="title">Game streaming</span><p class="desc">Watch games live and drop into the stream.</p><span class="host"><b>gaming</b>.omkarkadam.in<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a></li>
-        <li><a class="row" href="https://gomi-sort.omkarkadam.in" target="_blank" rel="noopener"><span class="title">Gomi waste sort</span><p class="desc">Find out which bin each item belongs in, with Japanese-style waste sorting made simple.</p><span class="host"><b>gomi-sort</b>.omkarkadam.in<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a></li>
+        <li><a class="row" href="https://gaming.omkarkadam.in" target="_blank" rel="noopener"><span class="title">Game Streaming</span><p class="desc">Watch games live and drop into the stream.</p><span class="host"><b>gaming</b>.omkarkadam.in<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a></li>
+        <li><a class="row" href="https://gomi-sort.omkarkadam.in" target="_blank" rel="noopener"><span class="title">Gomi Waste Sort</span><p class="desc">Find out which bin each item belongs in, with Japanese-style waste sorting made simple.</p><span class="host"><b>gomi-sort</b>.omkarkadam.in<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a></li>
         <li><a class="row" href="https://super-resume.omkarkadam.in/" target="_blank" rel="noopener"><span class="title">Super Gamified Resume</span><p class="desc">A resume you can play through, with levels, quests and achievements.</p><span class="host"><b>super-resume</b>.omkarkadam.in<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a></li>
+        <li><a class="row" href="https://ramayana.omkarkadam.in/" target="_blank" rel="noopener"><span class="title">Ramayana</span><p class="desc">The timeless epic of Rama, Sita and Hanuman, told in a new way.</p><span class="host"><b>ramayana</b>.omkarkadam.in<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a></li>
       </ul>
     </section>
 
@@ -149,7 +163,7 @@ footer a{color:var(--ink);border-bottom:1px solid var(--gold)}
       <h2 id="g5">Dating <small>2 sites</small></h2>
       <ul class="list">
         <li><a class="row" href="https://dating.omkarkadam.in" target="_blank" rel="noopener"><span class="title">Date Omkar</span><p class="desc">Say hello. A friendly little page for starting a conversation with me.</p><span class="host"><b>dating</b>.omkarkadam.in<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a></li>
-        <li><a class="row" href="https://skore.omkarkadam.in" target="_blank" rel="noopener"><span class="title">Realtime bodycount</span><p class="desc">A live counter that keeps score as it happens, with no refresh needed.</p><span class="host"><b>skore</b>.omkarkadam.in<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a></li>
+        <li><a class="row" href="https://skore.omkarkadam.in" target="_blank" rel="noopener"><span class="title">Realtime Bodycount</span><p class="desc">A live counter that keeps score as it happens, with no refresh needed.</p><span class="host"><b>skore</b>.omkarkadam.in<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a></li>
       </ul>
     </section>
   </main>
@@ -160,5 +174,224 @@ footer a{color:var(--ink);border-bottom:1px solid var(--gold)}
   </footer>
 </div>
 <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+<script>
+(function(){
+  var cv=document.getElementById('stars');
+  if(!cv||!cv.getContext)return;
+  var ctx=cv.getContext('2d');
+  var reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var W=0,H=0,dpr=1,stars=[],shooters=[],rgb=[241,236,247],gold=[233,185,90];
+
+  function parse(c){
+    var m=c.trim().match(/^#([0-9a-f]{6})$/i);
+    if(!m)return null;
+    var n=parseInt(m[1],16);
+    return [n>>16&255,n>>8&255,n&255];
+  }
+  function readColors(){
+    var cs=getComputedStyle(document.documentElement);
+    rgb=parse(cs.getPropertyValue('--ink'))||rgb;
+    gold=parse(cs.getPropertyValue('--gold'))||gold;
+  }
+  function resize(){
+    dpr=Math.min(window.devicePixelRatio||1,2);
+    W=window.innerWidth;H=window.innerHeight;
+    cv.width=W*dpr;cv.height=H*dpr;
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    var count=Math.round(Math.min(220,Math.max(70,W*H/9000)));
+    stars=[];
+    for(var i=0;i<count;i++){
+      var z=Math.random();            // depth: 0 far, 1 near
+      stars.push({
+        x:Math.random()*W,y:Math.random()*H,z:z,
+        r:0.4+z*1.4,
+        v:0.08+z*0.45,                // drift speed
+        tw:Math.random()*Math.PI*2,
+        ts:0.6+Math.random()*1.6,
+        warm:Math.random()<0.18
+      });
+    }
+  }
+  function spawnShooter(){
+    var fromLeft=Math.random()<0.5;
+    shooters.push({
+      x:fromLeft?Math.random()*W*0.6:W*0.4+Math.random()*W*0.6,
+      y:Math.random()*H*0.4,
+      vx:(fromLeft?1:-1)*(6+Math.random()*4),
+      vy:2.5+Math.random()*2.5,
+      life:1
+    });
+  }
+  function frame(t){
+    ctx.clearRect(0,0,W,H);
+    var s=t/1000;
+    for(var i=0;i<stars.length;i++){
+      var st=stars[i];
+      st.x-=st.v;st.y+=st.v*0.18;
+      if(st.x<-4){st.x=W+4;st.y=Math.random()*H}
+      if(st.y>H+4){st.y=-4;st.x=Math.random()*W}
+      var a=(0.25+0.75*st.z)*(0.55+0.45*Math.sin(s*st.ts+st.tw));
+      var c=st.warm?gold:rgb;
+      ctx.fillStyle='rgba('+c[0]+','+c[1]+','+c[2]+','+a.toFixed(3)+')';
+      ctx.beginPath();ctx.arc(st.x,st.y,st.r,0,6.2832);ctx.fill();
+      if(st.z>0.85){
+        ctx.fillStyle='rgba('+c[0]+','+c[1]+','+c[2]+','+(a*0.12).toFixed(3)+')';
+        ctx.beginPath();ctx.arc(st.x,st.y,st.r*3.2,0,6.2832);ctx.fill();
+      }
+    }
+    if(Math.random()<0.004&&shooters.length<2)spawnShooter();
+    for(var j=shooters.length-1;j>=0;j--){
+      var sh=shooters[j];
+      sh.x+=sh.vx;sh.y+=sh.vy;sh.life-=0.014;
+      if(sh.life<=0||sh.x<-50||sh.x>W+50||sh.y>H+50){shooters.splice(j,1);continue}
+      var g=ctx.createLinearGradient(sh.x,sh.y,sh.x-sh.vx*9,sh.y-sh.vy*9);
+      g.addColorStop(0,'rgba('+gold[0]+','+gold[1]+','+gold[2]+','+(0.9*sh.life).toFixed(3)+')');
+      g.addColorStop(1,'rgba('+gold[0]+','+gold[1]+','+gold[2]+',0)');
+      ctx.strokeStyle=g;ctx.lineWidth=1.6;ctx.lineCap='round';
+      ctx.beginPath();ctx.moveTo(sh.x,sh.y);ctx.lineTo(sh.x-sh.vx*9,sh.y-sh.vy*9);ctx.stroke();
+    }
+    if(!reduce)requestAnimationFrame(frame);
+  }
+  readColors();resize();
+  window.addEventListener('resize',function(){resize();if(reduce)frame(0)});
+  if(window.matchMedia){
+    var mq=window.matchMedia('(prefers-color-scheme:light)');
+    var onChange=function(){readColors();if(reduce)frame(0)};
+    if(mq.addEventListener)mq.addEventListener('change',onChange);
+  }
+  if(reduce)frame(0);else requestAnimationFrame(frame);
+})();
+</script>
+<script>
+(function(){
+  var btn=document.getElementById('music');
+  var AC=window.AudioContext||window.webkitAudioContext;
+  if(!btn)return;
+  if(!AC){btn.hidden=true;return}
+
+  var ctx,master,bus,delay,playing=false,chordTimer,bellTimer,ci=0;
+  // Slow, gentle progression: Cmaj9 > Am9 > Fmaj7 > G
+  var chords=[
+    [48,55,59,62,64],
+    [45,52,55,59,64],
+    [41,53,57,60,64],
+    [43,50,55,59,62]
+  ];
+  var penta=[0,2,4,7,9];
+
+  function mtof(m){return 440*Math.pow(2,(m-69)/12)}
+
+  function impulse(c){
+    var len=Math.floor(c.sampleRate*4),b=c.createBuffer(2,len,c.sampleRate);
+    for(var ch=0;ch<2;ch++){
+      var d=b.getChannelData(ch);
+      for(var i=0;i<len;i++)d[i]=(Math.random()*2-1)*Math.pow(1-i/len,2.5);
+    }
+    return b;
+  }
+
+  function setup(){
+    ctx=new AC();
+    master=ctx.createGain();master.gain.value=0;
+    var comp=ctx.createDynamicsCompressor();
+    master.connect(comp);comp.connect(ctx.destination);
+
+    bus=ctx.createGain();
+    var dry=ctx.createGain();dry.gain.value=0.5;
+    var wet=ctx.createGain();wet.gain.value=0.75;
+    var conv=ctx.createConvolver();conv.buffer=impulse(ctx);
+    bus.connect(dry);dry.connect(master);
+    bus.connect(conv);conv.connect(wet);wet.connect(master);
+
+    delay=ctx.createDelay(2);delay.delayTime.value=0.62;
+    var fb=ctx.createGain();fb.gain.value=0.35;
+    delay.connect(fb);fb.connect(delay);delay.connect(bus);
+  }
+
+  function chord(){
+    var notes=chords[ci++%chords.length],t=ctx.currentTime,dur=11;
+    notes.forEach(function(m,i){
+      [-5,5].forEach(function(det){
+        var o=ctx.createOscillator();
+        o.type=i===0?'sine':'triangle';
+        o.frequency.value=mtof(m);
+        o.detune.value=det;
+        var f=ctx.createBiquadFilter();f.type='lowpass';f.frequency.value=700;
+        var g=ctx.createGain(),peak=i===0?0.09:0.045;
+        g.gain.setValueAtTime(0.0001,t);
+        g.gain.linearRampToValueAtTime(peak,t+4);
+        g.gain.linearRampToValueAtTime(peak*0.8,t+dur-1);
+        g.gain.linearRampToValueAtTime(0.0001,t+dur+5);
+        o.connect(f);f.connect(g);g.connect(bus);
+        o.start(t);o.stop(t+dur+5.2);
+      });
+    });
+    chordTimer=setTimeout(chord,(dur-2)*1000);
+  }
+
+  function bell(){
+    var t=ctx.currentTime;
+    var m=72+penta[Math.floor(Math.random()*penta.length)]+(Math.random()<0.3?12:0);
+    var o=ctx.createOscillator();o.type='sine';o.frequency.value=mtof(m);
+    var h=ctx.createOscillator();h.type='sine';h.frequency.value=mtof(m)*2;
+    var hg=ctx.createGain();hg.gain.value=0.25;
+    var g=ctx.createGain();
+    g.gain.setValueAtTime(0.0001,t);
+    g.gain.linearRampToValueAtTime(0.07,t+0.02);
+    g.gain.exponentialRampToValueAtTime(0.0001,t+4.5);
+    o.connect(g);h.connect(hg);hg.connect(g);
+    g.connect(bus);g.connect(delay);
+    o.start(t);h.start(t);o.stop(t+4.6);h.stop(t+4.6);
+    bellTimer=setTimeout(bell,3500+Math.random()*5000);
+  }
+
+  function schedule(){
+    clearTimeout(chordTimer);clearTimeout(bellTimer);
+    chord();
+    bellTimer=setTimeout(bell,2500);
+  }
+
+  function ui(){
+    btn.classList.toggle('on',playing);
+    btn.setAttribute('aria-pressed',playing?'true':'false');
+    var l=playing?'Pause ambient music':'Play ambient music';
+    btn.setAttribute('aria-label',l);btn.title=l;
+  }
+
+  function start(){
+    if(!ctx)setup();
+    playing=true;
+    ctx.resume();
+    var t=ctx.currentTime;
+    master.gain.cancelScheduledValues(t);
+    master.gain.setValueAtTime(master.gain.value,t);
+    master.gain.linearRampToValueAtTime(0.55,t+3);
+    schedule();ui();
+  }
+
+  function stop(){
+    playing=false;
+    clearTimeout(chordTimer);clearTimeout(bellTimer);
+    var t=ctx.currentTime;
+    master.gain.cancelScheduledValues(t);
+    master.gain.setValueAtTime(master.gain.value,t);
+    master.gain.linearRampToValueAtTime(0,t+1.5);
+    setTimeout(function(){if(!playing)ctx.suspend()},1700);
+    ui();
+  }
+
+  btn.addEventListener('click',function(){playing?stop():start()});
+
+  document.addEventListener('visibilitychange',function(){
+    if(!ctx||!playing)return;
+    if(document.hidden){
+      clearTimeout(chordTimer);clearTimeout(bellTimer);
+      ctx.suspend();
+    }else{
+      ctx.resume();schedule();
+    }
+  });
+})();
+</script>
 </body>
 </html>
