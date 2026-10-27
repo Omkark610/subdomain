@@ -1,14 +1,14 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 
 <!-- Google AdSense -->
-<meta name="google-adsense-account" content="ca-pub-7963880628277539">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7963880628277539" crossorigin="anonymous"></script>
-
+<meta content="ca-pub-7963880628277539" name="google-adsense-account"/>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7963880628277539"></script>
 
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PGR4Y0TVNP"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-PGR4Y0TVNP"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -16,14 +16,14 @@
 
   gtag('config', 'G-PGR4Y0TVNP');
 </script>
-  
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
 <title>Omkar Kadam: Subdomains</title>
-<meta name="description" content="Sixteen small sites by Omkar Kadam, from an idea vault and pregnancy and fitness guides to Mumbai local trains.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
+<meta content="Sixteen small sites by Omkar Kadam, from an idea vault and pregnancy and fitness guides to Mumbai local trains." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&amp;family=Instrument+Sans:wght@400;500&amp;display=swap" rel="stylesheet"/>
 <style>
 :root{
   box-sizing:border-box;
@@ -56,149 +56,156 @@ a:focus-visible{outline:2px solid var(--gold);outline-offset:-2px}
 #stars{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
 .wrap{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 clamp(20px,5vw,48px)}
 
-header{padding:clamp(28px,5vw,56px) 0 clamp(16px,3vw,28px)}
-.name{font-family:var(--serif);font-weight:300;font-size:clamp(34px,6.5vw,80px);line-height:.98;letter-spacing:-.025em;margin:0;font-variation-settings:'opsz' 144}
+header{padding:clamp(22px,4vw,42px) 0 clamp(14px,2.5vw,22px);text-align:center}
+.name{font-family:var(--serif);font-weight:300;font-size:clamp(23px,3.6vw,42px);line-height:1;letter-spacing:-.025em;margin:0;font-variation-settings:'opsz' 144;display:flex;align-items:baseline;justify-content:center;gap:.35em;flex-wrap:wrap}
+.name .xplorer{font-family:var(--sans);font-size:clamp(11px,1.4vw,14px);font-weight:400;letter-spacing:.02em;color:var(--mute);font-style:normal}
 .name span{display:inline-block;overflow:hidden;vertical-align:top;padding-right:.05em}
 .name span:first-child{margin-right:.22em}
 .name span i{display:block;font-style:normal;animation:rise 1s cubic-bezier(.2,.7,.2,1) both}
 .name span:nth-child(2) i{animation-delay:.12s;color:var(--gold);font-style:italic;font-weight:300}
 @keyframes rise{from{transform:translateY(105%)}to{transform:none}}
-.lede{max-width:46ch;margin:clamp(10px,1.6vw,16px) 0 0;color:var(--mute);font-size:15px}
+.lede{max-width:46ch;margin:clamp(8px,1.4vw,12px) auto 0;color:var(--mute);font-size:15px}
+.section-controls{text-align:right;margin:-4px 0 8px;font-size:11px;color:var(--mute)}
+.section-controls button{font:inherit;color:inherit;background:none;border:0;padding:2px 4px;cursor:pointer}
+.section-controls button:hover{color:var(--gold)}
+.section-controls .sep{opacity:.55}
 
-.group{margin-top:clamp(32px,5vw,56px)}
+.group{margin-top:clamp(10px,1.5vw,16px)}
 .group h2{font-family:var(--serif);font-weight:400;font-size:17px;margin:0 0 6px;color:var(--gold);display:flex;align-items:baseline;gap:14px}
+.group h2{cursor:pointer;user-select:none}
+.group h2::after{content:"+";margin-left:auto;font-family:var(--sans);font-size:18px;font-weight:500;color:var(--mute);transition:transform .2s}
+.group.open h2::after{content:"−"}
+.group .list{display:none}
+.group.open .list{display:block}
 .group h2 small{font-family:var(--sans);font-size:14px;color:var(--mute);font-weight:400}
-.list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
-.list li{border-bottom:1px solid var(--line)}
-.row{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1.4fr) auto;gap:4px 24px;align-items:center;padding:clamp(10px,1.4vw,14px) clamp(4px,1vw,12px);transition:background .25s,padding .25s}
+.list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line);counter-reset:sr}
+.list li{border-bottom:1px solid var(--line);counter-increment:sr}
+.row{display:grid;grid-template-columns:34px minmax(0,1.1fr) minmax(0,1.4fr) auto;gap:4px 24px;align-items:center;padding:clamp(7px,1vw,10px) clamp(4px,1vw,10px);transition:background .25s,padding .25s}
+
+.row::before{content:counter(sr) '.';color:var(--mute);font-size:12px;font-variant-numeric:tabular-nums;text-align:right;padding-right:4px}
 .row:hover{background:var(--hover);padding-left:clamp(10px,1.6vw,18px)}
-.title{font-family:var(--serif);font-weight:400;font-size:clamp(19px,2.2vw,24px);line-height:1.1;letter-spacing:-.01em}
-.desc{color:var(--mute);margin:0;max-width:44ch;font-size:14px;line-height:1.45}
-.host{display:inline-flex;align-items:center;gap:10px;font-size:14px;color:var(--ink);white-space:nowrap}
+.title{font-family:var(--serif);font-weight:400;font-size:clamp(17px,1.9vw,21px);line-height:1.1;letter-spacing:-.01em}
+.desc{color:var(--mute);margin:0;max-width:44ch;font-size:13px;line-height:1.35}
+.host{display:inline-flex;align-items:center;gap:8px;font-size:12px;color:var(--ink);white-space:nowrap}
 .host b{font-weight:500;color:var(--gold)}
 .host svg{width:16px;height:16px;flex:none;transition:transform .25s;color:var(--gold)}
 .row:hover .host svg{transform:translate(3px,-3px)}
 
-footer{margin-top:clamp(32px,5vw,56px);padding:16px 0 28px;border-top:1px solid var(--line);color:var(--mute);font-size:14px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer{margin-top:clamp(20px,3vw,32px);padding:12px 0 20px;border-top:1px solid var(--line);color:var(--mute);font-size:14px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 footer a{color:var(--ink);border-bottom:1px solid var(--gold)}
 
 @media (max-width:760px){
-  .row{grid-template-columns:1fr;gap:6px}
+  .row{grid-template-columns:28px 1fr;gap:4px 8px}.row::before{grid-row:1 / span 3;align-self:start;padding-top:3px}.row .title,.row .desc,.row .host{grid-column:2}
   .host{margin-top:6px}
 }
 @media (prefers-reduced-motion:reduce){
   .name span i{animation:none}
   .row,.host svg{transition:none}
 }
+
+.group h2 small{font-size:11px;line-height:1.25;white-space:normal;}
 </style>
 </head>
 <body>
-<canvas id="stars" aria-hidden="true"></canvas>
-<button id="music" class="music" type="button" aria-pressed="false" aria-label="Play ambient music" title="Play ambient music"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path class="w" d="M16 9a4 4 0 010 6M18.5 6.5a8 8 0 010 11"/><path class="x" d="M16 9l5 6M21 9l-5 6"/></svg></button>
+<canvas aria-hidden="true" id="stars"></canvas>
+<button aria-label="Play ambient music" aria-pressed="false" class="music" id="music" title="Play ambient music" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9H4z"></path><path class="w" d="M16 9a4 4 0 010 6M18.5 6.5a8 8 0 010 11"></path><path class="x" d="M16 9l5 6M21 9l-5 6"></path></svg></button>
 <div class="wrap">
-  <header>
-    <h1 class="name"><span><i>Omkar</i></span><span><i>Kadam</i></span></h1>
-    <p class="lede">Explore Subdomains.</p>
-  </header>
+<header>
+<h1 class="name"><span><i>Omkar</i></span><span><i>Kadam</i></span><small class="xplorer">| Xplore Subdomain</small></h1>
 
-  <main>
-    <section class="group" aria-labelledby="g0">
-      <h2 id="g0">Imagine. Innovate. Invest. <small>1 site</small></h2>
-      <ul class="list">
-        <li><a class="row" href="https://idea.omkarkadam.in" target="_blank" rel="noopener"><span class="title">Idea Vault</span><p class="desc">A vault for ideas worth building, from the first spark to something worth backing.</p><span class="host"><b>idea</b>.omkarkadam.in<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a></li>
-      </ul>
-    </section>
+</header>
+<div class="section-controls" aria-label="Section controls"><button type="button" id="collapseAll">Collapse All</button><span class="sep"> / </span><button type="button" id="expandAll">Expand All</button></div>
+<main>
+<section aria-labelledby="g0" class="group open">
+<h2 id="g0">1. Imagine. Innovate. Invest.  <small>2 sites ( Idea | Support )</small></h2>
+<ul class="list">
+<li><a class="row" href="https://idea.omkarkadam.in" rel="noopener" target="_blank"><span class="title">Idea Vault</span><p class="desc">A vault for ideas worth building, from the first spark to something worth backing.</p><span class="host"><b>idea</b>.omkarkadam.in<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16"><path d="M4 12L12 4M5.5 4H12v6.5"></path></svg></span></a></li>
+<li><a class="row" href="https://support.omkarkadam.in" rel="noopener" target="_blank"><span class="title">Support</span><p class="desc">Support Omkar's ideas, projects and creative work.</p><span class="host"><b>support</b>.omkarkadam.in<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16"><path d="M4 12L12 4M5.5 4H12v6.5"></path></svg></span></a></li>
+</ul>
+</section>
+<section aria-labelledby="g1" class="group open">
+<h2 id="g1">2. Body and Wellbeing  <small>4 sites ( Food | Fitness | Dhyan | Yoga )</small></h2>
+<ul class="list">
+<li><a class="row" href="https://food.omkarkadam.in" rel="noopener" target="_blank"><span class="title">Essential Foods List</span><p class="desc">The everyday foods worth keeping in your kitchen, and why each one earns its place.</p><span class="host"><b>food</b>.omkarkadam.in<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16"><path d="M4 12L12 4M5.5 4H12v6.5"></path></svg></span></a></li>
+<li><a class="row" href="https://fitness.omkarkadam.in" rel="noopener" target="_blank"><span class="title">Fitness Guide</span><p class="desc">Simple routines and habits to build strength and stamina, whatever your starting point.</p><span class="host"><b>fitness</b>.omkarkadam.in<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16"><path d="M4 12L12 4M5.5 4H12v6.5"></path></svg></span></a></li>
+<li><a class="row" href="https://dhyan.omkarkadam.in" rel="noopener" target="_blank"><span class="title">Meditate</span><p class="desc">A quiet space to sit, breathe and settle your mind. Dhyan, in a few minutes a day.</p><span class="host"><b>dhyan</b>.omkarkadam.in<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16"><path d="M4 12L12 4M5.5 4H12v6.5"></path></svg></span></a></li>
+<li><a class="row" href="https://yoga.omkarkadam.in" rel="noopener" target="_blank"><span class="title">Yoga</span><p class="desc">Explore yoga from its traditional roots to modern practice.</p><span class="host"><b>yoga</b>.omkarkadam.in<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16"><path d="M4 12L12 4M5.5 4H12v6.5"></path></svg></span></a></li>
+</ul>
+</section>
+<section aria-labelledby="g7" class="group open">
+<h2 id="g7">3. Pregnancy Guide  <small>1 site ( Pregnancy )</small></h2>
+<ul class="list">
+<li><a class="row" href="https://pregnancy.omkarkadam.in" rel="noopener" target="_blank"><span class="title">Pregnancy Guide</span><p class="desc">A calm, clear companion for expecting parents, from the first weeks to the first days at home.</p><span class="host"><b>pregnancy</b>.omkarkadam.in<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16"><path d="M4 12L12 4M5.5 4H12v6.5"></path></svg></span></a></li>
+</ul>
+</section>
+<section aria-labelledby="g6" class="group open">
+<h2 id="g6">4. Relax, Rejuvenate, Refresh <small>2 sites ( Massage | Song )</small></h2>
+<ul class="list">
+<li><a class="row" href="https://massage.omkarkadam.in" rel="noopener" target="_blank"><span class="title">Massages</span><p class="desc">Massage and recovery, for when your body needs to slow down and reset.</p><span class="host"><b>massage</b>.omkarkadam.in<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16"><path d="M4 12L12 4M5.5 4H12v6.5"></path></svg></span></a></li>
+<li><a class="row" href="https://song.omkarkadam.in" rel="noopener" target="_blank"><span class="title">Songs by Omkar</span><p class="desc">Songs written, directed and produced by Omkar</p><span class="host"><b>song</b>.omkarkadam.in<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16"><path d="M4 12L12 4M5.5 4H12v6.5"></path></svg></span></a></li>
+</ul>
+</section>
+<section aria-labelledby="g2" class="group open">
+<h2 id="g2">5. Inspire and Motivate  <small>2 sites ( Drive | Time )</small></h2>
+<ul class="list">
+<li><a class="row" href="https://drive.omkarkadam.in" rel="noopener" target="_blank"><span class="title">Inspire And Motivate</span><p class="desc">A push for the days you need one. Short, honest words to get you moving again.</p><span class="host"><b>drive</b>.omkarkadam.in<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16"><path d="M4 12L12 4M5.5 4H12v6.5"></path></svg></span></a></li>
+<li><a class="row" href="https://time.omkarkadam.in" rel="noopener" target="_blank"><span class="title">Life In Decades</span><p class="desc">See your life laid out decade by decade, and decide what to do with the time you have.</p><span class="host"><b>time</b>.omkarkadam.in<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16"><path d="M4 12L12 4M5.5 4H12v6.5"></path></svg></span></a></li>
+</ul>
+</section>
+<section aria-labelledby="g8" class="group open">
+<h2 id="g8">6. Finance Guide  <small>1 site ( Finance )</small></h2>
+<ul class="list">
+<li><a class="row" href="https://finance.omkarkadam.in" rel="noopener" target="_blank"><span class="title">Finance Guide</span><p class="desc">Money basics in plain language: saving, investing and planning with confidence.</p><span class="host"><b>finance</b>.omkarkadam.in<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16"><path d="M4 12L12 4M5.5 4H12v6.5"></path></svg></span></a></li>
+</ul>
+</section>
+<section aria-labelledby="g3" class="group open">
+<h2 id="g3">7. Travel  <small>2 sites ( Guide | World Map )</small></h2>
+<ul class="list">
+<li><a class="row" href="https://guide.omkarkadam.in" rel="noopener" target="_blank"><span class="title">Mumbai Local Guide</span><p class="desc">Explore Mumbai with me as your Mumbai Tour Guide.</p><span class="host"><b>guide</b>.omkarkadam.in<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16"><path d="M4 12L12 4M5.5 4H12v6.5"></path></svg></span></a></li>
+<li><a class="row" href="https://world-map.omkarkadam.in" rel="noopener" target="_blank"><span class="title">Realtime World Map</span><p class="desc">Explore a realtime world map and discover what's happening around the globe.</p><span class="host"><b>world-map</b>.omkarkadam.in<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16"><path d="M4 12L12 4M5.5 4H12v6.5"></path></svg></span></a></li>
+</ul>
+</section>
+<section aria-labelledby="g4" class="group open">
+<h2 id="g4">8. Play  <small>7 sites ( Gaming | Gomi Sort | Super Resume | Ramayana | Nutri Crush | Dave | Test )</small></h2>
+<ul class="list">
+<li><a class="row" href="https://gaming.omkarkadam.in" rel="noopener" target="_blank"><span class="title">Game Streaming</span><p class="desc">Watch games live and drop into the stream.</p><span class="host"><b>gaming</b>.omkarkadam.in<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16"><path d="M4 12L12 4M5.5 4H12v6.5"></path></svg></span></a></li>
+<li><a class="row" href="https://gomi-sort.omkarkadam.in" rel="noopener" target="_blank"><span class="title">Gomi Waste Sort</span><p class="desc">Find out which bin each item belongs in, with Japanese-style waste sorting made simple.</p><span class="host"><b>gomi-sort</b>.omkarkadam.in<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16"><path d="M4 12L12 4M5.5 4H12v6.5"></path></svg></span></a></li>
+<li><a class="row" href="https://super-resume.omkarkadam.in/" rel="noopener" target="_blank"><span class="title">Super Gamified Resume</span><p class="desc">A resume you can play through, with levels, quests and achievements.</p><span class="host"><b>super-resume</b>.omkarkadam.in<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16"><path d="M4 12L12 4M5.5 4H12v6.5"></path></svg></span></a></li>
+<li><a class="row" href="https://ramayana.omkarkadam.in/" rel="noopener" target="_blank"><span class="title">Ramayana</span><p class="desc">The timeless epic of Rama, Sita and Hanuman, told in a new way.</p><span class="host"><b>ramayana</b>.omkarkadam.in<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16"><path d="M4 12L12 4M5.5 4H12v6.5"></path></svg></span></a></li>
+<li><a class="row" href="https://nutri-crush.omkarkadam.in" rel="noopener" target="_blank"><span class="title">Nutri Crush</span><p class="desc">Match nutritious foods in a fun, colorful puzzle game.</p><span class="host"><b>nutri-crush</b>.omkarkadam.in<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16"><path d="M4 12L12 4M5.5 4H12v6.5"></path></svg></span></a></li>
 
-    <section class="group" aria-labelledby="g1">
-      <h2 id="g1">Body and Wellbeing <small>4 sites</small></h2>
-      <ul class="list">
-        <li><a class="row" href="https://food.omkarkadam.in" target="_blank" rel="noopener"><span class="title">Essential Foods List</span><p class="desc">The everyday foods worth keeping in your kitchen, and why each one earns its place.</p><span class="host"><b>food</b>.omkarkadam.in<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a></li>
-        <li><a class="row" href="https://fitness.omkarkadam.in" target="_blank" rel="noopener"><span class="title">Fitness Guide</span><p class="desc">Simple routines and habits to build strength and stamina, whatever your starting point.</p><span class="host"><b>fitness</b>.omkarkadam.in<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a></li>
-        <li><a class="row" href="https://dhyan.omkarkadam.in" target="_blank" rel="noopener"><span class="title">Meditate</span><p class="desc">A quiet space to sit, breathe and settle your mind. Dhyan, in a few minutes a day.</p><span class="host"><b>dhyan</b>.omkarkadam.in<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a></li>
-        <li><a class="row" href="https://yoga.omkarkadam.in" target="_blank" rel="noopener"><span class="title">Yoga</span><p class="desc">Explore yoga from its traditional roots to modern practice.</p><span class="host"><b>yoga</b>.omkarkadam.in<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a></li>
-      </ul>
-    </section>
 
-    <section class="group" aria-labelledby="g7">
-      <h2 id="g7">Pregnancy Guide <small>1 site</small></h2>
-      <ul class="list">
-        <li><a class="row" href="https://pregnancy.omkarkadam.in" target="_blank" rel="noopener"><span class="title">Pregnancy Guide</span><p class="desc">A calm, clear companion for expecting parents, from the first weeks to the first days at home.</p><span class="host"><b>pregnancy</b>.omkarkadam.in<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a></li>
-      </ul>
-    </section>
 
-    <section class="group" aria-labelledby="g6">
-      <h2 id="g6">Relax, Rejuvenate, Refresh<small>2 site</small></h2>
-      <ul class="list">
-        <li><a class="row" href="https://massage.omkarkadam.in" target="_blank" rel="noopener"><span class="title">Massages</span><p class="desc">Massage and recovery, for when your body needs to slow down and reset.</p><span class="host"><b>massage</b>.omkarkadam.in<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a></li>
-        <li><a class="row" href="https://song.omkarkadam.in" target="_blank" rel="noopener"><span class="title">Songs by Omkar</span><p class="desc">Songs written, directed and produced by Omkar</p><span class="host"><b>song</b>.omkarkadam.in<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a></li>
-      </ul>
-    </section>
+<li><a class="row" href="https://dave.omkarkadam.in" rel="noopener" target="_blank"><span class="title">Dangerous Dave</span><p class="desc">Jump into a classic-inspired platform adventure.</p><span class="host"><b>dave</b>.omkarkadam.in<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16"><path d="M4 12L12 4M5.5 4H12v6.5"></path></svg></span></a></li>
 
-    <section class="group" aria-labelledby="g2">
-      <h2 id="g2">Inspire and Motivate <small>2 sites</small></h2>
-      <ul class="list">
-        <li><a class="row" href="https://drive.omkarkadam.in" target="_blank" rel="noopener"><span class="title">Inspire And Motivate</span><p class="desc">A push for the days you need one. Short, honest words to get you moving again.</p><span class="host"><b>drive</b>.omkarkadam.in<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a></li>
-        <li><a class="row" href="https://time.omkarkadam.in" target="_blank" rel="noopener"><span class="title">Life In Decades</span><p class="desc">See your life laid out decade by decade, and decide what to do with the time you have.</p><span class="host"><b>time</b>.omkarkadam.in<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a></li>
-      </ul>
-    </section>
 
-    <section class="group" aria-labelledby="g8">
-      <h2 id="g8">Finance Guide <small>1 site</small></h2>
-      <ul class="list">
-        <li><a class="row" href="https://finance.omkarkadam.in" target="_blank" rel="noopener"><span class="title">Finance Guide</span><p class="desc">Money basics in plain language: saving, investing and planning with confidence.</p><span class="host"><b>finance</b>.omkarkadam.in<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a></li>
-      </ul>
-    </section>
 
-    <section class="group" aria-labelledby="g3">
-      <h2 id="g3">Travel <small>1 site</small></h2>
-      <ul class="list">
-        <li><a class="row" href="https://guide.omkarkadam.in" target="_blank" rel="noopener"><span class="title">Mumbai Local Guide</span><p class="desc">Explore Mumbai with me as your Mumbai Tour Guide.</p><span class="host"><b>guide</b>.omkarkadam.in<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a></li>
-      </ul>
-    </section>
 
-    <section class="group" aria-labelledby="g4">
-      <h2 id="g4">Play <small>15 sites</small></h2>
-      <ul class="list">
-        <li><a class="row" href="https://gaming.omkarkadam.in" target="_blank" rel="noopener"><span class="title">Game Streaming</span><p class="desc">Watch games live and drop into the stream.</p><span class="host"><b>gaming</b>.omkarkadam.in<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a></li>
-        <li><a class="row" href="https://gomi-sort.omkarkadam.in" target="_blank" rel="noopener"><span class="title">Gomi Waste Sort</span><p class="desc">Find out which bin each item belongs in, with Japanese-style waste sorting made simple.</p><span class="host"><b>gomi-sort</b>.omkarkadam.in<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a></li>
-        <li><a class="row" href="https://super-resume.omkarkadam.in/" target="_blank" rel="noopener"><span class="title">Super Gamified Resume</span><p class="desc">A resume you can play through, with levels, quests and achievements.</p><span class="host"><b>super-resume</b>.omkarkadam.in<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a></li>
-        <li><a class="row" href="https://ramayana.omkarkadam.in/" target="_blank" rel="noopener"><span class="title">Ramayana</span><p class="desc">The timeless epic of Rama, Sita and Hanuman, told in a new way.</p><span class="host"><b>ramayana</b>.omkarkadam.in<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a></li>
-        <li><a class="row" href="https://nutri-crush.omkarkadam.in" target="_blank" rel="noopener"><span class="title">Nutri Crush</span><p class="desc">Match nutritious foods in a fun, colorful puzzle game.</p><span class="host"><b>nutri-crush</b>.omkarkadam.in<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a></li>
-        <li><a class="row" href="https://chain-reaction.omkarkadam.in" target="_blank" rel="noopener"><span class="title">Chain Reaction</span><p class="desc">Trigger chain reactions and outsmart your opponents.</p><span class="host"><b>chain-reaction</b>.omkarkadam.in<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a></li>
-        <li><a class="row" href="https://ludo.omkarkadam.in" target="_blank" rel="noopener"><span class="title">Ludo</span><p class="desc">Play the classic board game with friends or family.</p><span class="host"><b>ludo</b>.omkarkadam.in<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a></li>
-        <li><a class="row" href="https://tic-tac-toe.omkarkadam.in" target="_blank" rel="noopener"><span class="title">Tic-Tac-Toe</span><p class="desc">A quick strategy game of Xs and Os.</p><span class="host"><b>tic-tac-toe</b>.omkarkadam.in<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a></li>
-        <li><a class="row" href="https://dave.omkarkadam.in" target="_blank" rel="noopener"><span class="title">Dangerous Dave</span><p class="desc">Jump into a classic-inspired platform adventure.</p><span class="host"><b>dave</b>.omkarkadam.in<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a></li>
-        <li><a class="row" href="https://davevr.omkarkadam.in" target="_blank" rel="noopener"><span class="title">Dave VR</span><p class="desc">Explore the Dave experience in virtual reality.</p><span class="host"><b>davevr</b>.omkarkadam.in<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a></li>
-        <li><a class="row" href="https://neon-blades.omkarkadam.in/" target="_blank" rel="noopener"><span class="title">Neon Blades VR</span><p class="desc">Dive into a neon-lit arcade action game.</p><span class="host"><b>neon-blades</b>.omkarkadam.in<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a></li>
-        <li><a class="row" href="https://world-map.omkarkadam.in" target="_blank" rel="noopener"><span class="title">Realtime World Map</span><p class="desc">Explore a realtime world map and discover what's happening around the globe.</p><span class="host"><b>world-map</b>.omkarkadam.in<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a></li>
-        <li><a class="row" href="https://test.omkarkadam.in" target="_blank" rel="noopener"><span class="title">Test</span><p class="desc">A test site for experiments and demos.</p><span class="host"><b>test</b>.omkarkadam.in<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a></li>
-        <li><a class="row" href="https://flying-car.omkarkadam.in" target="_blank" rel="noopener"><span class="title">Tesla Roadster VR</span><p class="desc">Experience the Tesla Roadster from the driver's seat in virtual reality.</p><span class="host"><b>flying-car</b>.omkarkadam.in<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a></li>
-        <li><a class="row" href="https://climb-burj-khalifa.omkarkadam.in" target="_blank" rel="noopener"><span class="title">Burj Khalifa VR</span><p class="desc">Take on a virtual reality climb of the iconic Burj Khalifa.</p><span class="host"><b>climb-burj-khalifa</b>.omkarkadam.in<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a></li>
-      </ul>
-    </section>
+<li><a class="row" href="https://test.omkarkadam.in" rel="noopener" target="_blank"><span class="title">Test</span><p class="desc">A test site for experiments and demos.</p><span class="host"><b>test</b>.omkarkadam.in<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16"><path d="M4 12L12 4M5.5 4H12v6.5"></path></svg></span></a></li>
 
-    <section class="group" aria-labelledby="g9">
-      <h2 id="g9">Fun Apps <small>2 sites</small></h2>
-      <ul class="list">
-        <li><a class="row" href="https://age-detection.omkarkadam.in" target="_blank" rel="noopener"><span class="title">Age Detection</span><p class="desc">Explore an app that estimates age from a face image.</p><span class="host"><b>age-detection</b>.omkarkadam.in<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a></li>
-        <li><a class="row" href="https://video-call.omkarkadam.in" target="_blank" rel="noopener"><span class="title">Video Call</span><p class="desc">Connect face-to-face with a browser-based video call.</p><span class="host"><b>video-call</b>.omkarkadam.in<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a></li>
-      </ul>
-    </section>
 
-    <section class="group" aria-labelledby="g5">
-      <h2 id="g5">Dating <small>3 sites</small></h2>
-      <ul class="list">
-        <li><a class="row" href="https://dating.omkarkadam.in" target="_blank" rel="noopener"><span class="title">Date Omkar</span><p class="desc">Say hello. A friendly little page for starting a conversation with me.</p><span class="host"><b>dating</b>.omkarkadam.in<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a></li>
-        <li><a class="row" href="https://kamasutra.omkarkadam.in" target="_blank" rel="noopener"><span class="title">Kama sutra</span><p class="desc">The Art of Love.</p><span class="host"><b>kamasutra</b>.omkarkadam.in<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a></li>
-        <li><a class="row" href="https://skore.omkarkadam.in" target="_blank" rel="noopener"><span class="title">Realtime Bodycount</span><p class="desc">A live counter that keeps score as it happens, with no refresh needed.</p><span class="host"><b>skore</b>.omkarkadam.in<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a></li>
-      </ul>
-    </section>
-  </main>
-
-  <footer>
-    <span>&copy; <span id="y">2026</span> Omkar Kadam</span>
-    <a href="https://omkarkadam.in">omkarkadam.in</a>
-  </footer>
+</ul>
+</section><section aria-labelledby="g10" class="group open"><h2 id="g10">9. Play Multiplayer  <small>3 sites ( Tic Tac Toe | Ludo | Chain Reaction )</small></h2><ul class="list"><li><a class="row" href="https://tic-tac-toe.omkarkadam.in" rel="noopener" target="_blank"><span class="title">Tic-Tac-Toe</span><p class="desc">A quick strategy game of Xs and Os.</p><span class="host"><b>tic-tac-toe</b>.omkarkadam.in<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16"><path d="M4 12L12 4M5.5 4H12v6.5"></path></svg></span></a></li><li><a class="row" href="https://ludo.omkarkadam.in" rel="noopener" target="_blank"><span class="title">Ludo</span><p class="desc">Play the classic board game with friends or family.</p><span class="host"><b>ludo</b>.omkarkadam.in<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16"><path d="M4 12L12 4M5.5 4H12v6.5"></path></svg></span></a></li><li><a class="row" href="https://chain-reaction.omkarkadam.in" rel="noopener" target="_blank"><span class="title">Chain Reaction</span><p class="desc">Trigger chain reactions and outsmart your opponents.</p><span class="host"><b>chain-reaction</b>.omkarkadam.in<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16"><path d="M4 12L12 4M5.5 4H12v6.5"></path></svg></span></a></li></ul></section><section aria-labelledby="g11" class="group open"><h2 id="g11">10. Play VR / AR / XR  <small>5 sites ( Dave VR | Neon Blades VR | Neon Blades AR | Tesla Roadster VR | Burj Khalifa VR )</small></h2><ul class="list"><li><a class="row" href="https://davevr.omkarkadam.in" rel="noopener" target="_blank"><span class="title">Dave VR</span><p class="desc">Explore the Dave experience in virtual reality.</p><span class="host"><b>davevr</b>.omkarkadam.in<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16"><path d="M4 12L12 4M5.5 4H12v6.5"></path></svg></span></a></li><li><a class="row" href="https://neon-blades.omkarkadam.in/" rel="noopener" target="_blank"><span class="title">Neon Blades VR</span><p class="desc">Dive into a neon-lit arcade action game.</p><span class="host"><b>neon-blades</b>.omkarkadam.in<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16"><path d="M4 12L12 4M5.5 4H12v6.5"></path></svg></span></a></li><li><a class="row" href="https://neon-blades.omkarkadam.in/AR" rel="noopener" target="_blank"><span class="title">Neon Blades AR</span><p class="desc">Experience Neon Blades in augmented reality.</p><span class="host"><b>neon-blades</b>.omkarkadam.in/AR<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16"><path d="M4 12L12 4M5.5 4H12v6.5"></path></svg></span></a></li><li><a class="row" href="https://flying-car.omkarkadam.in" rel="noopener" target="_blank"><span class="title">Tesla Roadster VR</span><p class="desc">Experience the Tesla Roadster from the driver's seat in virtual reality.</p><span class="host"><b>flying-car</b>.omkarkadam.in<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16"><path d="M4 12L12 4M5.5 4H12v6.5"></path></svg></span></a></li><li><a class="row" href="https://climb-burj-khalifa.omkarkadam.in" rel="noopener" target="_blank"><span class="title">Burj Khalifa VR</span><p class="desc">Take on a virtual reality climb of the iconic Burj Khalifa.</p><span class="host"><b>climb-burj-khalifa</b>.omkarkadam.in<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16"><path d="M4 12L12 4M5.5 4H12v6.5"></path></svg></span></a></li></ul></section>
+<section aria-labelledby="g9" class="group open">
+<h2 id="g9">11. Fun Apps  <small>2 sites ( Age Detection | Video Call )</small></h2>
+<ul class="list">
+<li><a class="row" href="https://age-detection.omkarkadam.in" rel="noopener" target="_blank"><span class="title">Age Detection</span><p class="desc">Explore an app that estimates age from a face image.</p><span class="host"><b>age-detection</b>.omkarkadam.in<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16"><path d="M4 12L12 4M5.5 4H12v6.5"></path></svg></span></a></li>
+<li><a class="row" href="https://video-call.omkarkadam.in" rel="noopener" target="_blank"><span class="title">Video Call</span><p class="desc">Connect face-to-face with a browser-based video call.</p><span class="host"><b>video-call</b>.omkarkadam.in<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16"><path d="M4 12L12 4M5.5 4H12v6.5"></path></svg></span></a></li>
+</ul>
+</section>
+<section aria-labelledby="g5" class="group open">
+<h2 id="g5">12. Dating  <small>3 sites ( Dating | Kamasutra | Skore )</small></h2>
+<ul class="list">
+<li><a class="row" href="https://dating.omkarkadam.in" rel="noopener" target="_blank"><span class="title">Date Omkar</span><p class="desc">Say hello. A friendly little page for starting a conversation with me.</p><span class="host"><b>dating</b>.omkarkadam.in<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16"><path d="M4 12L12 4M5.5 4H12v6.5"></path></svg></span></a></li>
+<li><a class="row" href="https://kamasutra.omkarkadam.in" rel="noopener" target="_blank"><span class="title">Kama Sutra</span><p class="desc">The Art of Love.</p><span class="host"><b>kamasutra</b>.omkarkadam.in<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16"><path d="M4 12L12 4M5.5 4H12v6.5"></path></svg></span></a></li>
+<li><a class="row" href="https://skore.omkarkadam.in" rel="noopener" target="_blank"><span class="title">Realtime Bodycount</span><p class="desc">A live counter that keeps score as it happens, with no refresh needed.</p><span class="host"><b>skore</b>.omkarkadam.in<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 16 16"><path d="M4 12L12 4M5.5 4H12v6.5"></path></svg></span></a></li>
+</ul>
+</section>
+</main>
+<footer>
+<span>© <span id="y">2026</span> Omkar Kadam</span>
+<a href="https://omkarkadam.in">omkarkadam.in</a>
+</footer>
 </div>
 <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 <script>
@@ -417,6 +424,26 @@ footer a{color:var(--ink);border-bottom:1px solid var(--gold)}
     }else{
       ctx.resume();schedule();
     }
+  });
+})();
+</script>
+<script>
+(function(){
+  document.getElementById('collapseAll').addEventListener('click',function(){document.querySelectorAll('.group').forEach(function(s){s.classList.remove('open');var h=s.querySelector(':scope > h2');if(h)h.setAttribute('aria-expanded','false');});});
+  document.getElementById('expandAll').addEventListener('click',function(){document.querySelectorAll('.group').forEach(function(s){s.classList.add('open');var h=s.querySelector(':scope > h2');if(h)h.setAttribute('aria-expanded','true');});});
+  document.querySelectorAll('.group > h2').forEach(function(h){
+    h.setAttribute('role','button');
+    h.setAttribute('tabindex','0');
+    h.setAttribute('aria-expanded','true');
+    function toggle(){
+      var section=h.parentElement;
+      var open=section.classList.toggle('open');
+      h.setAttribute('aria-expanded',open?'true':'false');
+    }
+    h.addEventListener('click',toggle);
+    h.addEventListener('keydown',function(e){
+      if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle();}
+    });
   });
 })();
 </script>
